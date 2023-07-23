@@ -15,5 +15,5 @@ jobs:
 
       - name: Sync repository
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN1 }}
         run: gh repo sync lagzian/V2Hub -b main
