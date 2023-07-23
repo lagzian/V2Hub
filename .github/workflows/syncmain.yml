@@ -1,0 +1,19 @@
+name: Sync Repository
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Sync repository
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: gh repo sync lagzian/V2Hub -b main
